@@ -10,7 +10,7 @@
     packages = nixpkgs.legacyPackages.${self.system};
     devShells.${self.system}.default = self.packages.mkShell {
       buildInputs = [
-        # self.packages.cowsay
+        self.packages.cowsay
       ];
       shellHook = ''
         echo "Welcome to the World of Nix"
