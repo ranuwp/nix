@@ -7,7 +7,11 @@
 
   outputs = { self, nixpkgs }: {
     system = "x86_64-darwin";
-    devShells.${self.system}.default = nixpkgs.legacyPackages.${self.system}.mkShell {
+    packages = nixpkgs.legacyPackages.${self.system};
+    devShells.${self.system}.default = self.packages.mkShell {
+      buildInputs = [
+        self.packages.cowsay
+      ];
       shellHook = ''
         echo "Welcome to the World of Nix"
       '';
