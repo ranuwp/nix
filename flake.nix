@@ -25,7 +25,7 @@
         shellHook = ''
           echo "### Welcome to NIX ###"
           zsh
-          echo "Exiting from NIX #"
+          echo "### Exit from NIX ###"
           exit
         '';
         };
